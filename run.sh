@@ -17,7 +17,7 @@ fi
 # Install backend dependencies
 echo "Installing backend dependencies..."
 cd backend
-uv sync --no-dev
+uv sync
 
 # Run the backend using uv run
 echo "Starting server on port 8080..."
