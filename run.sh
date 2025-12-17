@@ -21,7 +21,7 @@ if [ ! -d ".venv" ]; then
     python -m venv .venv
 fi
 source .venv/bin/activate
-pip install -e .
+python -m pip install -e .
 
 # Run the backend
 echo "Starting server on port 8080..."
