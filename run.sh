@@ -17,8 +17,12 @@ fi
 # Install backend dependencies
 echo "Installing backend dependencies..."
 cd backend
-uv sync
+if [ ! -d ".venv" ]; then
+    python -m venv .venv
+fi
+source .venv/bin/activate
+pip install -e .
 
-# Run the backend using uv run
+# Run the backend
 echo "Starting server on port 8080..."
-exec uv run uvicorn app.main:app --host 0.0.0.0 --port 8080
+exec uvicorn app.main:app --host 0.0.0.0 --port 8080
